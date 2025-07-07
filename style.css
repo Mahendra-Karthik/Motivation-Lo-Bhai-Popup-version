@@ -1,0 +1,201 @@
+/* Base Styles */
+body {
+  width: 400px;
+  height: 520px;
+  margin: 0;
+  padding: 30px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header - Now visible during loading */
+h1 {
+  font-size: 2.1rem;
+  text-align: center;
+  margin: 0 0 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Perfectly Centered Loading Animation */
+#loadingScreen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-container {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin: 20px 0 30px 0;
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.loader div {
+  width: 26px;
+  height: 42px;
+  opacity: 0;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: #fff;
+  text-shadow: 
+    0 0 15px rgba(53, 196, 240, 1),
+    0 0 30px rgba(53, 196, 240, 0.5);
+  animation: move 2s linear infinite;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* Quote Screen */
+#quoteScreen {
+  flex: 1;
+  display: none;
+  flex-direction: column;
+}
+
+.quote-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 15px;
+  color: #333;
+  margin: 15px 0;
+  flex: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+}
+
+#quoteText {
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+#quoteAuthor {
+  text-align: right;
+  font-weight: 700; /* Bolder */
+  color: #4facfe;
+  font-size: 1.05rem;
+  padding-right: 10px;
+}
+
+/* Enhanced Button */
+#refreshBtn {
+  background: #4facfe;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 25px auto;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  width: 90%;
+  display: block;
+  letter-spacing: 1px;
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Button border */
+}
+
+#refreshBtn:hover {
+  background: #00c6ff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Refined Footer */
+.footer-credit {
+  margin-top: auto;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-credit p {
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
+.footer-credit a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-credit a:hover {
+  color: #00f2fe;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Animations */
+@keyframes move {
+  0% { 
+    left: 0; 
+    opacity: 0; 
+    transform: rotate(180deg) scale(0.8);
+  }
+  35% { 
+    left: 41%; 
+    opacity: 1; 
+    transform: rotate(0deg) scale(1.1);
+  }
+  65% { 
+    left: 59%; 
+    opacity: 1; 
+    transform: rotate(0deg) scale(1.1);
+  }
+  100% { 
+    left: 100%; 
+    opacity: 0; 
+    transform: rotate(-180deg) scale(0.8);
+  }
+}
+
+.loader div:nth-child(1) { animation-delay: 0s; }
+.loader div:nth-child(2) { animation-delay: 0.2s; }
+.loader div:nth-child(3) { animation-delay: 0.4s; }
+.loader div:nth-child(4) { animation-delay: 0.6s; }
+.loader div:nth-child(5) { animation-delay: 0.8s; }
+.loader div:nth-child(6) { animation-delay: 1s; }
+.loader div:nth-child(7) { animation-delay: 1.2s; }
